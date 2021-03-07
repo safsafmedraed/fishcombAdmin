@@ -2,7 +2,43 @@ import React from 'react'
 import CIcon from '@coreui/icons-react'
 
 const _nav =  [
+  
   {
+    _tag: 'CSidebarNavTitle',
+    _children: ['Site Management']
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Post',
+    to: '/dashboard',
+   // icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>,
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'MarketPlace',
+    to: '/dashboard',
+    //icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>,
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Events',
+    to: '/dashboard',
+   // icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>,
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Forum',
+    to: '/dashboard',
+   // icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>,
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Stream',
+    to: '/dashboard',
+   // icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>,
+  },
+  
+ /* {
     _tag: 'CSidebarNavItem',
     name: 'Dashboard',
     to: '/dashboard',
@@ -306,7 +342,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavDivider',
     className: 'm-2'
-  }
+  }*/
 ]
 
 export default _nav
