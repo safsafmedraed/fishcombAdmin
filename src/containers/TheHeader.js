@@ -7,9 +7,10 @@ import {
   CHeaderNav,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import {
+import { 
   TheHeaderDropdown,
-} from './index'
+}  from './index'
+
 const TheHeader = () => {
   const dispatch = useDispatch()
   const sidebarShow = useSelector(state => state.sidebarShow)
@@ -42,14 +43,15 @@ const TheHeader = () => {
       </CHeaderBrand>
 
       <CHeaderNav className="d-md-down-none mr-auto">
-
+      
       </CHeaderNav>
 
       <CHeaderNav className="px-3">
-        <TheHeaderDropdown />
+       
+        <TheHeaderDropdown/>
       </CHeaderNav>
 
-
+      
     </CHeader>
   )
 }
