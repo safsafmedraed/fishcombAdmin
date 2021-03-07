@@ -38,9 +38,13 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
 const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 const Post = React.lazy(()=>import('./views/post/post'))
+const MarketPlace = React.lazy(()=>import('./views/marketplace/marketplace'))
+const events = React.lazy(()=>import('./views/events/events'))
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/marketplace', name: 'marketplace', component: MarketPlace },
+  { path: '/events', name: 'events', component: events },
   { path: '/post', name: 'Post', component: Post },
   { path: '/theme', name: 'Theme', component: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', component: Colors },

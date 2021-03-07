@@ -16,13 +16,13 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'MarketPlace',
-    to: '/dashboard',
+    to: '/marketplace',
     //icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>,
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'Events',
-    to: '/dashboard',
+    to: '/events',
    // icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>,
   },
   {
