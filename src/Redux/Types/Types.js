@@ -1,0 +1,5 @@
+export const GET_ALLUSERS = 'GET_ALLUSERS';
+export const GET_ALLPOSTS = 'GET_ALLPOSTS';
+export const GET_ALLEVENTS = 'GET_ALLEVENTS';
+export const GET_ALLPRODUCTS = 'GET_ALLPRODUCTS';
+
