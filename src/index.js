@@ -11,7 +11,8 @@ import { icons } from './assets/icons'
 
 import { Provider } from 'react-redux'
 import store from './store'
-
+import axios from 'axios';
+axios.defaults.baseURL= 'http://77.68.24.35/';
 React.icons = icons
 
 ReactDOM.render(

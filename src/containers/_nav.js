@@ -28,7 +28,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Forum',
-    to: '/dashboard',
+    to: '/forum',
    // icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>,
   },
   {

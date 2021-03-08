@@ -2,4 +2,8 @@ export const GET_ALLUSERS = 'GET_ALLUSERS';
 export const GET_ALLPOSTS = 'GET_ALLPOSTS';
 export const GET_ALLEVENTS = 'GET_ALLEVENTS';
 export const GET_ALLPRODUCTS = 'GET_ALLPRODUCTS';
-
+export const GET_ALLTHREADS = 'GET_ALLTHREADS';
+export const GET_ONETHREAD = 'GET_ONETHREAD';
+export const SEARCH_THREAD = 'SEARCH_THREAD';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL  = 'LOGIN_FAIL';

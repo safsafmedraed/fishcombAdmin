@@ -1,4 +1,5 @@
 import React from 'react';
+import forum from './views/forum/forum';
 
 const Toaster = React.lazy(() => import('./views/notifications/toaster/Toaster'));
 const Tables = React.lazy(() => import('./views/base/tables/Tables'));
@@ -39,6 +40,7 @@ const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 const Post = React.lazy(()=>import('./views/post/post'))
 const MarketPlace = React.lazy(()=>import('./views/marketplace/marketplace'))
+const Forum = React.lazy(() => import('./views/forum/forum'))
 const events = React.lazy(()=>import('./views/events/events'))
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -46,6 +48,7 @@ const routes = [
   { path: '/marketplace', name: 'marketplace', component: MarketPlace },
   { path: '/events', name: 'events', component: events },
   { path: '/post', name: 'Post', component: Post },
+  { path: '/forum', name: 'forum', component: Forum },
   { path: '/theme', name: 'Theme', component: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },

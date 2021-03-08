@@ -1,5 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
+
+import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 import {
   CButton,
   CCard,
@@ -13,10 +17,26 @@ import {
   CInputGroupPrepend,
   CInputGroupText,
   CRow
-} from '@coreui/react'
+} from '@coreui/react';
+import { log } from '../../../Redux/Actions/Auth';
 import CIcon from '@coreui/icons-react'
 
-const Login = () => {
+const Login = ({ log }) => {
+
+  const [formData, setFormData] = useState({
+    login: '',
+    password: ''
+  });
+  const { login, password } = formData;
+
+  const onchange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = async e => {
+    e.preventDefault();
+    log(login, password);
+  }
+
+  
   return (
     <div className="c-app c-default-layout flex-row align-items-center">
       <CContainer>
@@ -25,7 +45,7 @@ const Login = () => {
             <CCardGroup>
               <CCard className="p-4">
                 <CCardBody>
-                  <CForm>
+                  <CForm onSubmit={e => onSubmit(e)}>
                     <h1>Login</h1>
                     <p className="text-muted">Sign In to your account</p>
                     <CInputGroup className="mb-3">
@@ -34,7 +54,7 @@ const Login = () => {
                           <CIcon name="cil-user" />
                         </CInputGroupText>
                       </CInputGroupPrepend>
-                      <CInput type="text" placeholder="Username" autoComplete="username" />
+                      <CInput type="text" placeholder="Username" autoComplete="username" name="login" value={login} onChange={e => onchange(e)}  />
                     </CInputGroup>
                     <CInputGroup className="mb-4">
                       <CInputGroupPrepend>
@@ -42,11 +62,11 @@ const Login = () => {
                           <CIcon name="cil-lock-locked" />
                         </CInputGroupText>
                       </CInputGroupPrepend>
-                      <CInput type="password" placeholder="Password" autoComplete="current-password" />
+                      <CInput type="password" placeholder="Password" autoComplete="current-password" name="password" value={password} onChange={e => onchange(e)}  />
                     </CInputGroup>
                     <CRow>
                       <CCol xs="6">
-                        <CButton color="primary" className="px-4">Login</CButton>
+                        <CButton color="primary" className="px-4" type="submit" value="handleSubmit">Login</CButton>
                       </CCol>
                       <CCol xs="6" className="text-right">
                         <CButton color="link" className="px-0">Forgot password?</CButton>
@@ -74,5 +94,12 @@ const Login = () => {
     </div>
   )
 }
+Login.propTypes = {
+  log: propTypes.func.isRequired,
 
-export default Login
+}
+const mapStateToProps = state => ({
+  
+})
+
+export default connect(mapStateToProps, { log })(Login);
