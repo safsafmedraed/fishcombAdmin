@@ -11,7 +11,6 @@ export const getAllthreads = () => async dispatch => {
         }
     }
     const res = await axios.get('/api/threads',config)
-    console.log('***', res.data)
     dispatch({
         type: GET_ALLTHREADS,
         payload: res.data

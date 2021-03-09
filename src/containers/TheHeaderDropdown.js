@@ -6,9 +6,13 @@ import {
   CDropdownToggle,
   CImg
 } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
+import CIcon from '@coreui/icons-react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from 'src/Redux/Actions/Auth';
 
-const TheHeaderDropdown = () => {
+
+const TheHeaderDropdown = ({ logout, Auth: {user} }) => {
   return (
     <CDropdown
       inNav
@@ -18,7 +22,9 @@ const TheHeaderDropdown = () => {
       <CDropdownToggle className="c-header-nav-link" caret={false}>
         <div className="c-avatar">
           <CImg
-            src={'avatars/6.jpg'}
+            src={
+              user && user.attributes.profile_image
+            }
             className="c-avatar-img"
             alt="admin@bootstrapmaster.com"
           />
@@ -33,7 +39,7 @@ const TheHeaderDropdown = () => {
         >
           <strong>Account settings</strong>
         </CDropdownItem>
-        
+
         <CDropdownItem>
           <CIcon name="cil-user" className="mfe-2" />Profile
         </CDropdownItem>
@@ -42,13 +48,19 @@ const TheHeaderDropdown = () => {
           Settings
         </CDropdownItem>
         <CDropdownItem divider />
-        <CDropdownItem>
-          <CIcon name="cil-lock-locked" className="mfe-2" />
+        <CDropdownItem to='/home'
+            onClick={logout}>
+          <CIcon name="cil-lock-locked" className="mfe-2"  />
           Logout
         </CDropdownItem>
       </CDropdownMenu>
     </CDropdown>
   )
 }
+TheHeaderDropdown.prototype ={
+  logout: PropTypes.func.isRequired,
+  Auth: PropTypes.object.isRequired
+}
+const mapStateToProps = state => ({ Auth: state.Auth })
 
-export default TheHeaderDropdown
+export default  connect(mapStateToProps, { logout} )  (TheHeaderDropdown);

@@ -1,7 +1,9 @@
-import { LOGIN_SUCCESS, LOGIN_FAIL } from '../Types/Types';
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, CLEAR_PROFILE, USER_LOADED, AUTH_ERROR } from '../Types/Types';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
+
+//Login 
 export const log = ( login, password ) => async dispatch => {
     const config = {
         headers: {
@@ -33,17 +35,48 @@ export const log = ( login, password ) => async dispatch => {
             });
             
         }).catch((err)=>{
-            
             dispatch({
                 type: LOGIN_FAIL,
             })  
         });
     } catch (err) {
-        // const errors = err.response.data.errors;
-      /*  toast.error('Error')
+        const errors = err.response.data.errors;
         dispatch({
             type: LOGIN_FAIL,
-        })*/
+        })
     }
 }
+
+//Load User
+export const loadUser = () => async dispatch => {
+    const config = {
+        headers: {
+            Authorization: 'Bearer ' + Cookies.get('user'),
+            'content-Type': 'application/json'
+        }
+    };
+    try {
+        const res = await axios.post('api/user/profile', {}, config);
+        dispatch({
+            type: USER_LOADED,
+            payload: res.data.data
+        })
+        Cookies.set('profile', res.data.data)
+    } catch (err) {
+        dispatch({
+            type: AUTH_ERROR
+        })
+    }
+
+  }
+//Logout
+export const logout = () => async dispatch => {
+    dispatch({
+        type: CLEAR_PROFILE
+    });
+    dispatch({
+        type: LOGOUT
+    });
+}
+
 

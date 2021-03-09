@@ -7,3 +7,7 @@ export const GET_ONETHREAD = 'GET_ONETHREAD';
 export const SEARCH_THREAD = 'SEARCH_THREAD';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL  = 'LOGIN_FAIL';
+export const LOGOUT = 'LOGOUT' ;
+export const CLEAR_PROFILE = 'CLEAR_PROFILE';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const  USER_LOADED = 'USER_LOADED';
