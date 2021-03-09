@@ -10,6 +10,7 @@ import CIcon from '@coreui/icons-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from 'src/Redux/Actions/Auth';
+import { Avatar } from '@material-ui/core';
 
 
 const TheHeaderDropdown = ({ logout, Auth: {user} }) => {
@@ -21,7 +22,7 @@ const TheHeaderDropdown = ({ logout, Auth: {user} }) => {
     >
       <CDropdownToggle className="c-header-nav-link" caret={false}>
         <div className="c-avatar">
-          <CImg
+          <Avatar
             src={
               user && user.attributes.profile_image
             }
