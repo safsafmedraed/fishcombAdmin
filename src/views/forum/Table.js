@@ -1,42 +1,40 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Table from 'react-bootstrap/Table';
 
-
-const Table = ({ Thread: { thread } }) => {
+const Tables = ({ Thread: { thread } }) => {
     return (
         <>
-            <table>
+            <Table hover variant="dark">
                 <thead>
-                    <tr>
-
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Total</th>
-                        <th>Transaction_Id</th>
-                        <th> </th>
-                    </tr>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Total</th>
+                </tr>
                 </thead>
-                <tbody>
+            <tbody>
                 {thread && thread.map((threads) => (
-                        <tr  key={threads.id} threads={threads}  >
+                    <tr key={threads.id} threads={threads}  >
                         <td>{threads && threads.data.title}</td>
                         <td>{threads && threads.data.title}</td>
                         <td>{threads && threads.data.title}</td>
-                      </tr>
-                      )
-                      )}
-                </tbody>
-            </table>
+                    </tr>
+                )
+                )}
+            </tbody>
+        </Table>
+                
         </>
     )
 }
-Table.prototype = {
-                Thread: PropTypes.object.isRequired,
+Tables.prototype = {
+    Thread: PropTypes.object.isRequired,
 }
 const mapStateToProps = state => ({
-                Thread: state.Thread,
+    Thread: state.Thread,
 })
-export default connect(mapStateToProps,null)(Table);
+export default connect(mapStateToProps, null)(Tables);
 
 

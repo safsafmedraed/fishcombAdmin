@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { getAllthreads } from '../../Redux/Actions/Forum';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Table from './Table';
-import Navbars from '../base/navbars/Navbars';
+import Tables from './Table';
+import Navbars from './Navbars';
+import { CRow, CCol } from '@coreui/react';
 
 const Forum = ({ getAllthreads }) => {
     useEffect(() => {
@@ -11,9 +12,12 @@ const Forum = ({ getAllthreads }) => {
     }, [getAllthreads])
     return (<div>
         <Navbars />
-       
-            <Table  />
-       
+        <CRow className='pt-4'>
+            <CCol xs={12}>
+                <Tables />
+            </CCol>
+        </CRow>
+
     </div>)
 }
 Forum.prototype = {
