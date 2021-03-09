@@ -21,7 +21,7 @@ import {
 import { log } from '../../../Redux/Actions/Auth';
 import CIcon from '@coreui/icons-react'
 
-const Login = ({ log }) => {
+const Login = ({ log, isAuthenticated}) => {
 
   const [formData, setFormData] = useState({
     login: '',
@@ -35,8 +35,10 @@ const Login = ({ log }) => {
     e.preventDefault();
     log(login, password);
   }
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  };
 
-  
   return (
     <div className="c-app c-default-layout flex-row align-items-center">
       <CContainer>
@@ -99,7 +101,6 @@ Login.propTypes = {
 
 }
 const mapStateToProps = state => ({
-  
+  isAuthenticated: state.Auth.isAuthenticated
 })
-
 export default connect(mapStateToProps, { log })(Login);
