@@ -9,17 +9,22 @@ const Tables = ({ Thread: { thread } }) => {
             <Table hover variant="dark">
                 <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Total</th>
+                    <th>Title</th>
+                    <th>Name User</th>
+                    <th>
+                    </th>
                 </tr>
                 </thead>
             <tbody>
                 {thread && thread.map((threads) => (
                     <tr key={threads.id} threads={threads}  >
                         <td>{threads && threads.data.title}</td>
-                        <td>{threads && threads.data.title}</td>
-                        <td>{threads && threads.data.title}</td>
+                        <td>{threads && threads.data.user.data.attributes.first_name} {threads && threads.data.user.data.attributes.last_name}</td>
+                        <td>
+                            <button>
+                                Details
+                            </button>
+                        </td>
                     </tr>
                 )
                 )}

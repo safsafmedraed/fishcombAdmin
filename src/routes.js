@@ -39,7 +39,7 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
 const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 const Post = React.lazy(()=>import('./views/post/post'))
-const MarketPlace = React.lazy(()=>import('./views/marketplace/marketplace'))
+const MarketPlace = React.lazy(()=>import('./views/marketplace/Marketplace'))
 const Forum = React.lazy(() => import('./views/forum/forum'))
 const events = React.lazy(()=>import('./views/events/events'))
 const routes = [
