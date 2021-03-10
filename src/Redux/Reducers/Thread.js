@@ -1,7 +1,7 @@
 import { GET_ALLTHREADS, SEARCH_THREAD, GET_ONETHREAD }from '../Types/Types';
 const initialState = {
+    threads: [],
     thread: [],
-    threads: null,
     loading:true,
     isAuthenticated: false,
     error :{}
@@ -12,19 +12,20 @@ export default function (state = initialState, action) {
         case GET_ALLTHREADS:
             return {
                 ...state,
-                thread:payload,
+                threads : payload,
                 loading:false
             }
         case GET_ONETHREAD: {
             return{
                 ...state,
-                threads:payload
+                thread : payload,
+                loading:false
             }
         }
         case SEARCH_THREAD: {
             return{
                 ...state,
-                thread: payload,
+                threads: payload,
                 loading:false
             }
         }

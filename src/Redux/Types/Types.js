@@ -11,3 +11,5 @@ export const LOGOUT = 'LOGOUT' ;
 export const CLEAR_PROFILE = 'CLEAR_PROFILE';
 export const AUTH_ERROR = 'AUTH_ERROR';
 export const  USER_LOADED = 'USER_LOADED';
+export const ERROR__THREAD = 'ERROR__THREAD';
+export const SEARCH_THREAD_ERROR = 'SEARCH_THREAD_ERROR';
