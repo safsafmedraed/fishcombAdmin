@@ -46,7 +46,7 @@ const TheHeader = () => {
       
       </CHeaderNav>
 
-      <CHeaderNav className="px-3">
+      <CHeaderNav className="px-4">
        
         <TheHeaderDropdown/>
       </CHeaderNav>

@@ -13,6 +13,7 @@ import { logout } from 'src/Redux/Actions/Auth';
 import { Avatar } from '@material-ui/core';
 
 
+
 const TheHeaderDropdown = ({ logout, Auth: {user} }) => {
   return (
     <CDropdown
@@ -29,6 +30,7 @@ const TheHeaderDropdown = ({ logout, Auth: {user} }) => {
             className="c-avatar-img"
             alt="admin@bootstrapmaster.com"
           />
+          {user && user.attributes.first_name} {user && user.attributes.last_name}
         </div>
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
@@ -41,8 +43,8 @@ const TheHeaderDropdown = ({ logout, Auth: {user} }) => {
           <strong>Account settings</strong>
         </CDropdownItem>
 
-        <CDropdownItem>
-          <CIcon name="cil-user" className="mfe-2" />Profile
+        <CDropdownItem to='/profile'>
+            <CIcon name="cil-user" className="mfe-2" />Profile
         </CDropdownItem>
         <CDropdownItem>
           <CIcon name="cil-settings" className="mfe-2" />
