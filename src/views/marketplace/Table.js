@@ -15,7 +15,7 @@ const Tables = ({Marketplace : {products}}) => {
                     <tr>
                         <th>Number Events</th>
                         <th>Event Name</th>
-                        <th>Name User</th>
+                        <th>Quantity</th>
                         <th>
                         </th>
                     </tr>
@@ -25,9 +25,9 @@ const Tables = ({Marketplace : {products}}) => {
                         <tr key={products.id} products={products}  >
                             <td>{products && products.id}</td>
                             <td>{products && products.name}</td>
-                            <td> </td>
+                            <td>{products && products.stock} </td>
                             <td>
-                                <Link >
+                                <Link to={`/product/${products.id}`} >
                                     <CButton block variant="outline" color="info"  >Details</CButton>
                                 </Link>
                             </td>

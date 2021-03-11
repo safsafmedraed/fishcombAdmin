@@ -1,4 +1,4 @@
-import { GET_ALLPRODUCTS }from '../Types/Types';
+import { GET_ALLPRODUCTS, GET_ONEPRODUCT }from '../Types/Types';
 
 
 const initialState = {
@@ -15,6 +15,12 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 products:payload,
+                loading:false
+            }
+        case GET_ONEPRODUCT:
+            return{
+                ...state,
+                product:payload,
                 loading:false
             }
             default:

@@ -18,7 +18,7 @@ export default function (state = initialState, action) {
         case GET_ONETHREAD: {
             return{
                 ...state,
-                threads : payload,
+                thread : payload,
             }
         }
         case SEARCH_THREAD: {
