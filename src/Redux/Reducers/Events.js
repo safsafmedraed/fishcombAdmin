@@ -1,4 +1,4 @@
-import { GET_ALLEVENTS, ERROR_EVENT } from '../Types/Types';
+import { GET_ALLEVENTS, ERROR_EVENT, GET_ONEEVENT  } from '../Types/Types';
 
 const initialState = {
     events: [],
@@ -15,6 +15,12 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 events:payload,
+                loading:false
+            }
+        case GET_ONEEVENT:
+            return{
+                ...state,
+                event:payload,
                 loading:false
             }
             default:

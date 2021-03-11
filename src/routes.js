@@ -1,4 +1,5 @@
 import React from 'react';
+
 import forum from './views/forum/forum';
 
 
@@ -39,11 +40,12 @@ const Typography = React.lazy(() => import('./views/theme/typography/Typography'
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
 const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
-const Post = React.lazy(()=>import('./views/post/post'));
-const MarketPlace = React.lazy(()=>import('./views/marketplace/Marketplace'));
-const Forum = React.lazy(() => import('./views/forum/forum'));
+const Post = React.lazy(()=>import('./views/post/post'))
+const MarketPlace = React.lazy(()=>import('./views/marketplace/Marketplace'))
+const Forum = React.lazy(() => import('./views/forum/forum'))
 const Events = React.lazy(()=>import('./views/events/Events'));
-const SingleProduct = React.lazy (()=> import ('./views/marketplace/SingleProduct'));
+const SingleProduct = React.lazy(()=> import ('./views/marketplace/SingleProduct'));
+const SingleEvent = React.lazy(()=> import ('./views/events/SingleEvent'));
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -51,6 +53,7 @@ const routes = [
   { path: '/events', name: 'Events', component: Events },
   { path: '/thread/:id', exact: true, name: 'single thread', component: SingleThread },
   { path: '/product/:id', exact: true, name: 'Single Product', component: SingleProduct },
+  { path: '/event/:id', exact: true, name: 'Single Event', component: SingleEvent },
   { path: '/post', name: 'Post', component: Post },
   { path: '/forum', name: 'forum', component: Forum },
   { path: '/theme', name: 'Theme', component: Colors, exact: true },

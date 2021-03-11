@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { getOneThread } from '../../Redux/Actions/Forum';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-const SingleThread = ({ match, getOneThread ,thread: {thread}}) => {
+const SingleThread = ({ match, getOneThread ,Thread: {thread}}) => {
     
     useEffect(() => {
         getOneThread(match.params.id);
     }, [getOneThread, match.params.id])
     return (
         <div>
-           {thread && thread.data.title}
+           {thread && thread?.data?.title}
         </div>
     )
 }
@@ -18,6 +18,6 @@ SingleThread.prototype = {
     Thread: PropTypes.object.isRequired,
 }
 const mapStateToProps = state => ({
-    thread: state.thread,
+    Thread: state.Thread,
 })
 export default connect(mapStateToProps, { getOneThread })(SingleThread)

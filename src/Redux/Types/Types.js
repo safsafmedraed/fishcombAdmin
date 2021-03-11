@@ -16,4 +16,6 @@ export const SEARCH_THREAD_ERROR = 'SEARCH_THREAD_ERROR';
 export const ERROR_EVENT = 'ERROR_EVENT';
 export const GET_ONEPRODUCT = 'GET_ONEPRODUCT';
 export const ERROR_PRODUCT = 'ERROR_PRODUCT';
+export const GET_ONEEVENT = 'GET_ONEEVENT'; 
+
 

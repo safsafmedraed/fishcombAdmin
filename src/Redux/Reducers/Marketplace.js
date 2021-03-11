@@ -2,7 +2,7 @@ import { GET_ALLPRODUCTS, GET_ONEPRODUCT }from '../Types/Types';
 
 
 const initialState = {
-    product: [],
+    product: null,
     products: null,
     loading:true,
     isAuthenticated: false,

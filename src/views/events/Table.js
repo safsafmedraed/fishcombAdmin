@@ -27,7 +27,7 @@ const Tables = ({Events :{events}}) => {
                             <td>{events && events.name}</td>
                             <td> </td>
                             <td>
-                                <Link >
+                                <Link to={`event/${events.id}`} >
                                     <CButton block variant="outline" color="info"  >Details</CButton>
                                 </Link>
                             </td>
@@ -45,7 +45,6 @@ Tables.prototype = {
 }
 const mapStateToProps = state => ({
     Events: state.Events,
-    events: state.events
 })
 export default connect(mapStateToProps, null)(Tables);
 
