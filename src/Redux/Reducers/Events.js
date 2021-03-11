@@ -1,20 +1,20 @@
-import { GET_ALLPRODUCTS }from '../Types/Types';
-
+import { GET_ALLEVENTS, ERROR_EVENT } from '../Types/Types';
 
 const initialState = {
-    product: [],
-    products: null,
+    events: [],
+    event: null,
     loading:true,
     isAuthenticated: false,
     error :{}
 };
+
 export default function (state = initialState, action) {
     const { type, payload } = action
     switch (type) {
-        case GET_ALLPRODUCTS:
+        case GET_ALLEVENTS:
             return {
                 ...state,
-                products:payload,
+                events:payload,
                 loading:false
             }
             default:

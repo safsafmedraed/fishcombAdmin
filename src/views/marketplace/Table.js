@@ -7,27 +7,27 @@ import {
 } from '@coreui/react'
 import { Link } from 'react-router-dom';
 
-const Tables = ({ Thread: { threads } }) => {
+const Tables = ({Marketplace : {products}}) => {
     return (
         <>
             <Table hover variant="pramiry">
                 <thead>
                     <tr>
-                        <th>Number Threads</th>
-                        <th>Title</th>
+                        <th>Number Events</th>
+                        <th>Event Name</th>
                         <th>Name User</th>
                         <th>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {threads && threads.map((threads) => (
-                        <tr key={threads.id} threads={threads}  >
-                            <td>{threads && threads.data.id}</td>
-                            <td>{threads && threads.data.title}</td>
-                            <td>{threads && threads.data.user.data.attributes.first_name} {threads && threads.data.user.data.attributes.last_name}</td>
+                {products && products.map((products) => (
+                        <tr key={products.id} products={products}  >
+                            <td>{products && products.id}</td>
+                            <td>{products && products.name}</td>
+                            <td> </td>
                             <td>
-                                <Link to={`/thread/${threads.data.id}`}>
+                                <Link >
                                     <CButton block variant="outline" color="info"  >Details</CButton>
                                 </Link>
                             </td>
@@ -39,13 +39,13 @@ const Tables = ({ Thread: { threads } }) => {
         </>
     )
 }
-Tables.prototype = {
-    Thread: PropTypes.object.isRequired,
 
+Tables.prototype = {
+    Marketplace  : PropTypes.object.isRequired,
 }
 const mapStateToProps = state => ({
-    Thread: state.Thread,
-    thread: state.Thread
+    Marketplace : state.Marketplace,
+    products: state.products
 })
 export default connect(mapStateToProps, null)(Tables);
 

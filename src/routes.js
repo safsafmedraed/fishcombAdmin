@@ -42,12 +42,12 @@ const User = React.lazy(() => import('./views/users/User'));
 const Post = React.lazy(()=>import('./views/post/post'))
 const MarketPlace = React.lazy(()=>import('./views/marketplace/Marketplace'))
 const Forum = React.lazy(() => import('./views/forum/forum'))
-const events = React.lazy(()=>import('./views/events/events'))
+const Events = React.lazy(()=>import('./views/events/Events'))
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/marketplace', name: 'marketplace', component: MarketPlace },
-  { path: '/events', name: 'events', component: events },
+  { path: '/events', name: 'Events', component: Events },
   { path: '/thread/:id', exact: true, name: 'single thread', component: SingleThread },
   { path: '/post', name: 'Post', component: Post },
   { path: '/forum', name: 'forum', component: Forum },

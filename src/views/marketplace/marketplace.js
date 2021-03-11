@@ -3,21 +3,15 @@ import { getallproducts } from '../../Redux/Actions/Market';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Tables from '../base/tables/Tables';
-import Navbars from '../base/navbars/Navbars';
-
-const Marketplace = ({ getallproducts, Marketplace: { product } }) => {
+import CNavbars from './NavBars';
+import Table from './Table';
+const Marketplace = ({ getallproducts }) => {
     useEffect(() => {
         getallproducts()
     }, [getallproducts])
     return (<div>
-        <Navbars />
-
-
-        <div>
-            <span>
-                {product && product.name}
-            </span>
-        </div>
+        <CNavbars />
+        <Table />
     </div>)
 }
 
